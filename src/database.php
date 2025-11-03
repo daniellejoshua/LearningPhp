@@ -3,9 +3,9 @@
 
 
 $db_server = "mysql"; 
-$db_user = "user";
-$db_pass = "userpassword"; 
-$db_name = "businessdb"; 
+$db_user = "root";
+$db_pass = "rootpassword"; 
+$db_name = "LearningSql"; 
 
 $conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
 
@@ -14,7 +14,7 @@ if (!$conn) {
     exit;
 }
 
-echo "You are connected";
+
 
 
 ?>
