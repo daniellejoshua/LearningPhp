@@ -3,13 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>User Registration</title>
 </head>
 <body>
+    <h1>Register</h1>
     <form action="includes/signup.inc.php" method="post">
-        <input type="text" name ="username">username <br>
-        <input type="password" name = "password"> password <br>
-        <button name = "signup">Sign up </button>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required><br><br>
+
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" placeholder="Enter your age" required><br><br>
+
+        <button type="submit" name="register">Register</button>
     </form>
+    <button onclick="window.location.href ='/includes/users.php';">Users page</button>
 </body>
 </html>
