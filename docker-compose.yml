@@ -24,14 +24,12 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${DB_NAME}
-      MYSQL_USER: ${DB_USER}
-      MYSQL_PASSWORD: ${DB_PASS}
     volumes:
       - db_data:/var/lib/mysql
     ports:
       - "3306:3306"
 
-  phpmyadmin:
+  phpmyadmin: # ✅ Correctly aligned as a separate service
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
     restart: always

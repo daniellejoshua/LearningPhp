@@ -1,20 +1,28 @@
 <?php 
+class Dbh {
+    private $host = "mysql"; // Database host
+    private $user = "root";      // Database username
+    private $pass = "rootpassword";          // Database password
+    private $dbname = "LearningSql";  // Database name
 
+    protected function connect() {
+        try {
+            // Create a DSN (Data Source Name)
+            $dsn = "mysql:host=" . $this->host . ";dbname=" . $this->dbname;
 
+            // Create a PDO instance
+            $pdo = new PDO($dsn, $this->user, $this->pass);
 
-$db_server = getenv('DB_SERVER'); 
-$db_user = getenv('DB_USER');
-$db_pass = getenv('DB_PASS'); 
-$db_name = getenv('DB_NAME'); 
+            // Set PDO error mode to exception
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
-
-if (!$conn) {
-    echo "Connection failed: " . mysqli_connect_error();
-    exit;
+            return $pdo; // Return the PDO instance
+        } catch (PDOException $e) {
+            // Handle connection errors
+            echo "Connection failed: " . $e->getMessage();
+            exit;
+        }
+    }
 }
-
-
-
 
 ?>
