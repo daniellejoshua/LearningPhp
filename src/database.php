@@ -9,7 +9,7 @@ class Dbh {
         try {
             // Create a DSN (Data Source Name)
             $dsn = "mysql:host=" . $this->host . ";dbname=" . $this->dbname;
-
+             
             // Create a PDO instance
             $pdo = new PDO($dsn, $this->user, $this->pass);
 

@@ -8,7 +8,7 @@ class Signup extends Dbh{
 
     public function __construct($username, $password, $email, $age){
         $this -> username = $username;
-        $this -> password = password_hash($password,PASSWORD_DEFAULT);
+        $this -> password = password_hash($password,PASSWORD_BCRYPT);
         $this -> email = $email;
         $this -> age = $age;
     }
@@ -47,5 +47,6 @@ class Signup extends Dbh{
         header("Location:" . "/index.php");
         die();
       }
+      
      }
 }
